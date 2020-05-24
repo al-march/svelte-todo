@@ -10,7 +10,7 @@
 <div class="todo__item">
   <div class="todo__content" class:completed="{todo.completed}">
     <input class="todo__check" type="checkbox" bind:checked={todo.completed}>
-    <strong class="todo__index">{index}</strong>
+    <strong class="todo__index">{index + 1}</strong>
     <p>{todo.title}</p>
   </div>
   <button class="btn-icon" on:click={Todos.delete(todo.id)}>&times;</button>

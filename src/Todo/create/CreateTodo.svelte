@@ -11,6 +11,7 @@
       completed: false
     }
 
+    title = ''
     Todos.create(newTodo)
   }
 

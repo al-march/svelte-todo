@@ -7,19 +7,26 @@ const todoPromise = new Promise(resolve => {
 })
 
 function takeTodos() {
+  let initialTodos = [];
   const { subscribe, set, update } = writable([]);
 
   todoPromise.then(res => {
     update(t => t = res);
+    initialTodos = res;
   })
 
   return {
     subscribe,
-    delete: (id) => update(todos => todos = todos.filter(todo => todo.id !== id)),
-    create: (todo) => update(todos => {
-      todos.unshift(todo)
-      return todos
-    })
+    delete: (id) => update(todos => {
+      initialTodos = initialTodos.filter(todo => todo.id !== id)
+      return initialTodos
+    }),
+    create: (todo) => update(() => {
+      initialTodos.unshift(todo)
+      return initialTodos
+    }),
+    filtered: (search) => update(todos => todos = initialTodos.filter(todo => todo.includes(search))),
+    resetFilters: () => set(initialTodos)
   };
 }
 
