@@ -6,10 +6,6 @@ const todoPromise = new Promise(resolve => {
     .then(json => resolve(json));
 })
 
-function deleteTodo() {
-
-}
-
 function takeTodos() {
   const { subscribe, set, update } = writable([]);
 
@@ -19,7 +15,8 @@ function takeTodos() {
 
   return {
     subscribe,
-    delete: (id) => update(todos => todos = todos.filter(todo => todo.id !== id))
+    delete: (id) => update(todos => todos = todos.filter(todo => todo.id !== id)),
+    create: (todo) => update(todos => todos.unshift(todo))
   };
 }
 

@@ -1,4 +1,5 @@
 <script>
+	import CreateTodo from './Todo/create/CreateTodo.svelte';
   import Todo from "./Todo/Todo.svelte";
   export let name = "World";
 </script>
@@ -7,9 +8,15 @@
 
 <main>
   <h1>Hello {name.toUpperCase()}!</h1>
-  
+
   <div class="container">
-    <Todo />
+
+    <div class="main__content">
+      <CreateTodo />
+
+      <Todo />
+    </div>
+
   </div>
 
 </main>

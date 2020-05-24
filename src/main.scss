@@ -32,3 +32,17 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+:global(.t-center) {
+  text-align: center;
+}
+
+.main {
+
+  &__content {
+    display: grid;
+    max-width: 700px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}

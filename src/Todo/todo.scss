@@ -11,6 +11,10 @@
     margin: 0 auto;
     margin-bottom: 1rem;
   }
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
   &__content {
     display: flex;
     align-items: center;

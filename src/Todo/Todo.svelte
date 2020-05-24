@@ -8,10 +8,11 @@ function showTodo() {
 }
 </script>
 
+<style src="./todo.scss"></style>
+
 <main>
-  <p>Список тудушек</p>
-  <button on:click={showTodo}>Вывести в консоль</button>
-  <ul>
+  <p class="t-center">List of Todo</p>
+  <ul class="todo__list">
     {#each $Todos as todo, index}
       <TodoItem {todo} {index} />
     {/each}
