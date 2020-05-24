@@ -25,7 +25,7 @@ function takeTodos() {
       initialTodos.unshift(todo)
       return initialTodos
     }),
-    filtered: (search) => update(todos => todos = initialTodos.filter(todo => todo.includes(search))),
+    filtered: (search) => update(() => initialTodos.filter(todo => todo.title.includes(search))),
     resetFilters: () => set(initialTodos)
   };
 }
