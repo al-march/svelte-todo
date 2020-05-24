@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 
 const todoPromise = new Promise(resolve => {
-  fetch("https://jsonplaceholder.typicode.com/users/1/todos?_limit=5")
+  fetch("https://jsonplaceholder.typicode.com/users/1/todos")
     .then(response => response.json())
     .then(json => resolve(json));
 })
@@ -11,13 +11,13 @@ function takeTodos() {
   const { subscribe, set, update } = writable([]);
 
   todoPromise.then(res => {
-    update(t => t = res);
+    set(res);
     initialTodos = res;
   })
 
   return {
     subscribe,
-    delete: (id) => update(todos => {
+    delete: (id) => update(() => {
       initialTodos = initialTodos.filter(todo => todo.id !== id)
       return initialTodos
     }),

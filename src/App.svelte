@@ -10,13 +10,9 @@
   <h1>Hello {name.toUpperCase()}!</h1>
 
   <div class="container">
-
     <div class="main__content">
-      <CreateTodo />
-
-      <Todo />
+      <CreateTodo/>
+      <Todo/>
     </div>
-
   </div>
-
 </main>
