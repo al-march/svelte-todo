@@ -10,7 +10,7 @@ function showTodo() {
 
 <style src="./todo.scss"></style>
 
-<main>
+<main on:click={showTodo}>
   <p class="t-center">List of Todo</p>
   <ul class="todo__list">
     {#each $Todos as todo, index}

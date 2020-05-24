@@ -16,7 +16,10 @@ function takeTodos() {
   return {
     subscribe,
     delete: (id) => update(todos => todos = todos.filter(todo => todo.id !== id)),
-    create: (todo) => update(todos => todos.unshift(todo))
+    create: (todo) => update(todos => {
+      todos.unshift(todo)
+      return todos
+    })
   };
 }
 
