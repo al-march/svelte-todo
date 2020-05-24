@@ -13,5 +13,5 @@
     <strong class="todo__index">{index}</strong>
     <p>{todo.title}</p>
   </div>
-  <button class="todo__delete" on:click={Todos.delete(todo.id)}>&times;</button>
+  <button class="btn-icon" on:click={Todos.delete(todo.id)}>&times;</button>
 </div>
